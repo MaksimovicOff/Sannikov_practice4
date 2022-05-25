@@ -1,0 +1,111 @@
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.task_list{
+	width: 375px;
+	height: 812px;
+	border: 1px solid #cacaca;
+	border-radius: 3px;
+	font-family: sans-serif;
+}
+
+/*header*/
+
+.header{
+	display: flex;
+	border-bottom: 1px solid #cacaca;
+	justify-content: center;
+	align-items: center;
+	font-size: 14px;
+	width: 375px;
+	height: 50px;
+}
+
+/*control pannel*/
+
+.control{
+	width: 375px;
+	height: 108px;
+	font-size: 14px;
+	border-bottom: 1px solid #cacaca;
+}
+
+.input_text{
+	margin: 10px;
+	padding: 5px;
+	border: 3px solid #2b2b2b;
+	color: #2b2b2b;
+	width: 50%;
+}
+
+.input_text:hover{
+	transition: 0.4s;
+	border: 4px solid #2b2b2b;
+}
+
+.add{
+	margin: 10px;
+	padding: 5px;
+	border: 1px solid #2b2b2b;
+	border-radius: 5px;
+	background-color: #2b2b2b;
+	color: #fcfcfc;
+	width: 30%;
+}
+
+.add:hover{
+	transition: 0.4s;
+	background-color: #acacac;
+	border: 2px solid #acacac;
+}
+
+.input_controls{
+	margin: 10px;
+	padding: 5px;
+	border: 3px solid #2b2b2b;
+	border-radius: 5px;
+	background-color: #fcfcfc;
+	color: #2b2b2b;
+	width: 30%;
+}
+
+.input_controls:hover{
+	transition: 0.4s;
+	background-color: #828282;
+	border: 4px solid #828282;
+}
+
+/*tasks*/
+
+.tasks{
+	width: 375px;
+	height: 100%;
+	font-size: 14px;
+}
+
+.task1{
+	height: 100%;
+	font-size: 14px;
+	margin: 10px;
+	padding: 5px;
+	border-bottom: 1px solid #cacaca;
+}
+
+.input_controls1{
+	padding: 5px;
+	border: 3px solid #2b2b2b;
+	border-radius: 5px;
+	background-color: #fcfcfc;
+	color: #2b2b2b;
+	width: 30%;
+}
+
+.input_controls1:hover{
+	transition: 0.4s;
+	background-color: #828282;
+	border: 4px solid #828282;
+}
+
