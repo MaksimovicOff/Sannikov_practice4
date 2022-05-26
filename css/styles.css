@@ -4,7 +4,7 @@ body{
 	align-items: center;
 }
 
-.task_list{
+.todo{
 	width: 375px;
 	height: 812px;
 	border: 1px solid #cacaca;
@@ -43,7 +43,7 @@ body{
 
 .input_text:hover{
 	transition: 0.4s;
-	border: 4px solid #2b2b2b;
+	border: 3px solid #2b2b2b;
 }
 
 .add{
@@ -59,11 +59,11 @@ body{
 .add:hover{
 	transition: 0.4s;
 	background-color: #acacac;
-	border: 2px solid #acacac;
+	border: 1px solid #acacac;
 }
 
-.input_controls{
-	margin: 10px;
+.rem_all{
+	margin: 1.5px;
 	padding: 5px;
 	border: 3px solid #2b2b2b;
 	border-radius: 5px;
@@ -72,40 +72,125 @@ body{
 	width: 30%;
 }
 
-.input_controls:hover{
+.rem_all:hover{
 	transition: 0.4s;
 	background-color: #828282;
-	border: 4px solid #828282;
+	border: 3px solid #828282;
 }
 
-/*tasks*/
+.rea_all{
+	margin: 1.5px;
+	padding: 5px;
+	border: 3px solid #2b2b2b;
+	border-radius: 5px;
+	background-color: #fcfcfc;
+	color: #2b2b2b;
+	width: 30%;
+}
 
-.tasks{
-	width: 375px;
+.rea_all:hover{
+	transition: 0.4s;
+	background-color: #828282;
+	border: 3px solid #828282;
+}
+
+.todo__options{
+	margin: 6px;
+	padding: 5px;
+	border: 3px solid #2b2b2b;
+	border-radius: 5px;
+	background-color: #fcfcfc;
+	color: #2b2b2b;
+	/*float: right;*/
+}
+
+.todo__items{
 	height: 100%;
+	width: 375px;
 	font-size: 14px;
 }
 
-.task1{
-	height: 100%;
+.todo__item {
 	font-size: 14px;
 	margin: 10px;
 	padding: 5px;
 	border-bottom: 1px solid #cacaca;
+	list-style-type: none;
 }
 
-.input_controls1{
-	padding: 5px;
+.todo__action_delete {
 	border: 3px solid #2b2b2b;
 	border-radius: 5px;
 	background-color: #fcfcfc;
 	color: #2b2b2b;
 	width: 30%;
+	height: 30px;
 }
 
-.input_controls1:hover{
-	transition: 0.4s;
+.todo__action_complete {
+	border: 3px solid #2b2b2b;
+	border-radius: 5px;
+	background-color: #fcfcfc;
+	color: #2b2b2b;
+	width: 30%;
+	height: 30px;
+}
+
+.todo__action_restore {
+	border: 3px solid #2b2b2b;
+	border-radius: 5px;
+	background-color: #fcfcfc;
+	color: #2b2b2b;
+	width: 30%;
+	height: 30px;
+}
+
+.todo__action_delete:hover {
+  	transition: 0.4s;
 	background-color: #828282;
-	border: 4px solid #828282;
+	border: 3px solid #828282;
 }
 
+.todo__action_complete:hover {
+  	transition: 0.4s;
+	background-color: #828282;
+	border: 3px solid #828282;
+}
+
+.todo__action_restore:hover {
+  	transition: 0.4s;
+	background-color: #828282;
+	border: 3px solid #828282;
+}
+
+.todo__action_circle_res{
+	height: 3em;
+  	width: 3em;
+	float: right;
+	border: 0.1875em solid #fc1808;
+  	border-radius: 50%;
+}
+
+.todo__action_circle_com{
+	height: 3em;
+  	width: 3em;
+	float: right;
+	border: 0.1875em solid #02ee02;
+  	border-radius: 50%;
+  	justify-items: center;
+}
+
+[data-todo-state="active"] .todo__action_restore,
+[data-todo-state="completed"] .todo__action_complete {
+  display: none;
+}
+
+[data-todo-state="active"] .todo__action_circle_com,
+[data-todo-state="completed"] .todo__action_circle_res{
+  display: none;
+}
+
+[data-todo-option="active"] .todo__item:not([data-todo-state="active"]),
+[data-todo-option="completed"] .todo__item:not([data-todo-state="completed"]) {
+  display: none;
+}
