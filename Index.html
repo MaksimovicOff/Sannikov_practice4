@@ -7,53 +7,25 @@
 	<title>Task list</title>
 </head>
 <body>
-	<div class="task_list">
+	<div class="todo">
 		<div class="header">
 			Task list
 		</div>
 		<div class="control">
-			<form method="POST">
-				<input type="text" name="" placeholder="Enter text..." class="input_text" id="text_around">
-				<button type="button" class="add">ADD TASK</button>
-				<input type="submit" name="" value="REMOVE ALL" class="input_controls">
-				<input type="submit" name="" value="READY ALL" class="input_controls">
-			</form>
+			<input type="text" placeholder="Enter text..." class="input_text" id="text_around">
+			<button type="button" class="add">ADD TASK</button>
+			<button class="rem_all">REMOVE ALL</button>
+			<button class="rea_all">READY ALL</button>
+			<select class="todo__options">
+      			<option value="active">Активные</option>
+      			<option value="completed">Завершённые</option>
+    		</select>
 		</div>
-		<div class="container" id="container"></div>
+		<div class="todo__items" data-todo-option="active">
+		</div>
 	</div>
 	<script src="jquery-3.6.0.min.js"></script>
-  <script>
-    $("button.add").on('click', function(){
-      const cont = document.getElementById("container");
-      const text = document.getElementById("text_around");
-      if (text.value == '') {
-        alert('Введите текст!');
-      }
-      else
-      {
-        const status = document.createElement("div");
-        status.className = "blockA";
-        status.innerHTML = "<div class='status' id='status'></div>"
-        const div = document.createElement("div");
-        div.className = "blockC";
-        div.innerHTML = text.value;
-        const sub = document.createElement("div");
-        sub.className = "blockB";
-        sub.innerHTML = "<button type='button' class='input_controls1'>Ready</button> <button type='button' class='input_controls1'>Delete</button>";
-        const varDiv = document.createElement("div");
-        varDiv.className = "task1";
-        varDiv.appendChild(div);
-        varDiv.appendChild(sub);
-        varDiv.appendChild(status);
-        cont.appendChild(varDiv);
-      }
-      
-    })
-  </script>
-  <script>
-  $("button.ready_b").on('click', function(){
-      document.getElementById('status').style.background = "#000000";
-    })
-  </script>
+	<script src="script.js"></script>
+	<script src="ready.js"></script>
 </body>
 </html>
